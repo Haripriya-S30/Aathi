@@ -1,0 +1,76 @@
+ private void RockImage_Click(object sender, EventArgs e)
+        {
+            Random randomGenerator = new Random();
+            int computerChoice;
+            PlayerImage = RockImage;
+            computerChoice = randomGenerator.Next(1, 4);
+            switch (computerChoice)
+            {
+                case 1:
+                    ComputerImage = RockImage;
+                    Winner.Text = " TIE " ;
+                    break;
+
+                case 2:
+                    ComputerImage = PaperImage;
+                    Winner.Text = " Computer wins because paper covers rock " ;
+                    break;
+                case 3:
+                    ComputerImage = ScissorImage;
+                    Winner.Text = " Player wins because rock breaks scissors " ;
+                    break;
+            }
+        }
+
+        private void PaperImage_Click(object sender, EventArgs e)
+        {
+            Random randomGenerator = new Random();
+            int computerChoice;
+            PlayerImage = PaperImage;
+            computerChoice = randomGenerator.Next(1, 4);
+            switch (computerChoice)
+            {
+                case 1:
+                    ComputerImage = RockImage;
+                    Winner.Text = " Payer wins because paper covers rock " ;
+                    break;
+                case 2:
+                    ComputerImage = PaperImage;
+                    Winner.Text = " TIE " ;
+                    break;
+                case 3:
+                    ComputerImage = ScissorImage;
+                    Winner.Text = " Computer wins because scissors cut paper " ;
+                    break;
+            }
+        }
+
+        private void ScissorImage_Click(object sender, EventArgs e)
+        {
+            Random randomGenerator = new Random();
+            int computerChoice;
+            PlayerImage = ScissorImage;
+            computerChoice = randomGenerator.Next(1, 4);
+            switch (computerChoice)
+            {
+
+                case 1:
+                    ComputerImage = RockImage;
+                    Winner.Text = " Computer wins because rock breaks scissors " ;
+                    break;
+                case 2:
+                    ComputerImage = PaperImage;
+                    Winner.Text = " Player wins because scissors cut paper " ;
+                    break;
+                case 3:
+                    ComputerImage = ScissorImage;
+                    Winner.Text = " TIE" ;
+                    break;
+            }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+    }
