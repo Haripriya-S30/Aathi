@@ -1,0 +1,48 @@
+namespace file_operations
+{
+    public partial class WebForm1 : System.Web.UI.Page
+    {
+        string filePath => Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),"Sample.txt");
+        
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!File.Exists(filePath))
+                {
+                    File.Create(filePath).Close();
+                    L4.Text = "File created successfully.";
+                }
+                else
+                {
+                    L4.Text = "File already exists.";
+                }
+            }
+            catch (Exception ex)
+            {
+                L4.Text = "Error: " + ex.Message;
+            }
+        }
+
+        protected void Write_Click(object sender, EventArgs e)
+        {
+            File.WriteAllText(filePath, "Hello, this is a test file.");
+            L4.Text = "Text written successfully.";
+        }
+
+        protected void Read_Click(object sender, EventArgs e)
+        {
+            L4.Text = File.Exists(filePath) ? File.ReadAllText(filePath) : "File not found.";
+        }
+
+      
+
+        protected void Button1_Click1(object sender, EventArgs e)
+        {
+            if (File.Exists(filePath)) { File.Delete(filePath); L4.Text = "File deleted."; }
+            else L4.Text = "File does not exist.";
+
+        }
+    }
+}
