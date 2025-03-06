@@ -1,0 +1,11 @@
+protected void Button1_Click1(object sender, EventArgs e)
+        {
+            if(Page.IsValid)
+            {
+                L1.Text = "Thank you for voting";
+            }
+            else
+            {
+                L1.Text = "Fill all the blanks";
+            }
+        }
